@@ -1,0 +1,105 @@
+void sp_func(int r,int c,int n)
+{    int last_check(void);
+      void list(void);
+      void sp_adition_list(int r,int c, int v);
+     int d;
+     d=0;
+     
+     table[r][c]=n;
+      list();
+      d=last_check();
+      
+      if(d==1)
+      sp_adition_list(r,c,n);
+      
+      table[r][c]=0;
+      list();
+     }
+
+
+
+
+
+
+
+
+
+
+
+void solve2(void)
+{
+     int r,c,a,b,m,n,q,w;
+     a=b=m=n=r=c=q=w=0;
+     
+     list();
+     
+     for(m=1;m<=9;m++)
+     {
+                      
+       for(n=1;n<=9;n++)
+      {
+      b=0;
+       block2(m);
+       for(q=row_start;q<=row_end;q++)
+      {for(w=column_start;w<=column_end;w++)
+      {
+    
+      if(table[q][w]==0)
+      {
+    
+      for(a=1;a<=9;a++)
+      {
+    
+      if(posible_num[((9*(q-1))+w)][a]==n)
+      {
+      b=b+1;
+      r=q;
+      c=w; }
+                      
+                      }
+    
+                      }
+    
+    
+                      }  
+                      }                
+    
+    
+    
+       if(b==1)
+      {table[r][c]=n;
+      solved_pos+=1;
+      list(); }
+              
+                      }
+                      } 
+                      
+}                       
+
+
+
+
+
+
+
+
+
+/*dr=dc=0;
+      
+      for(k=1;k<=b;k++)        
+      {if(r[1]!=r[k])
+      dr=1;}
+      
+      for(k=1;k<=b;k++)        
+      {if(c[1]!=c[k])
+      dc=1;}
+      
+      
+      
+     if(dr==0)
+      {sp_adition_list2(r[1],m,n);  list();}
+      
+      
+      if(dc==0)
+      {sp_adition_list3(c[1],m,n);  list();}
+       */  
